@@ -25,6 +25,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
+STEAM_API_KEY = env('STEAM_API_KEY', None)
+
 # Application definition
 
 INSTALLED_APPS = [
