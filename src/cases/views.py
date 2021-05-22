@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def case_page(request):
+    return render(request, 'case.html', {})
