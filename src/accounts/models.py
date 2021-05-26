@@ -54,7 +54,7 @@ class User(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
-    balanse = models.DecimalField(max_digits=50, decimal_places=2)
+    balance = models.DecimalField(max_digits=50, decimal_places=2, default='0.00')
 
     USERNAME_FIELD = "email"
     objects = UserManager()
