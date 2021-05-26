@@ -11,6 +11,7 @@ class Case(models.Model):
     active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
+    bonus = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = ("Case")
