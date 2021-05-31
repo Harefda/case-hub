@@ -6,6 +6,7 @@ class Purchase(models.Model):
     user = models.ForeignKey('accounts.User', related_name='purchases', on_delete=models.CASCADE)
     case = models.ForeignKey('cases.Case', related_name='purchases', on_delete=models.SET_NULL  , null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    paid = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = ("Purchase")
