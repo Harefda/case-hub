@@ -21,3 +21,17 @@ def get_all_cases_api(request):
 
     return Response(serializer.data, status=200)
 
+@api_view(["GET"])
+def get_case_api(request, *args, **kwargs):
+    case_id = request.GET.get("id")
+    if case_id is None:
+        return Response({"error": "Case id is required"}, status=400)
+
+    try:
+        case = Case.objects.get(id=case_id)
+
+    except Case.DoesNotExist:
+        return Response({"error": f"Item with id - {case_id} doesn't exist"}, status=400)
+
+    serializer = CaseSerializer(instance=case)
+    return Response(serializer.data, status=200)    

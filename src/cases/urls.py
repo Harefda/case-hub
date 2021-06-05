@@ -23,4 +23,5 @@ from cases.services import get_all_items_in_case
 urlpatterns = [
     path('case/', views.case_page),
     path('api/case/list/', apis.get_all_cases_api),
+    path('api/case/get/', apis.get_case_api),
 ]

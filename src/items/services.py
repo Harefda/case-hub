@@ -14,7 +14,6 @@ def open_case(case):
     random_num = random.randint(0, 10000)
     count = 0
 
-    user = user
 
     for item in items:
         count += float(item.chance_of_drop) * 100

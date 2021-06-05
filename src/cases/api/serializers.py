@@ -38,7 +38,7 @@ class ItemInCaseSerializer(serializers.ModelSerializer):
         return price
 
     def get_image(self, obj):
-        image = obj.item.image
+        image = str(obj.item.image)
         return image
 
 class CaseSerializer(serializers.ModelSerializer):

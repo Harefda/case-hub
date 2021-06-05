@@ -28,7 +28,7 @@ def get_filename_ext(filename):
     name, ext = os.path.splitext(filename)
     return name, ext
 
-def get_user_upload_image_path(*args, **kwargs):
+def get_item_upload_image_path(*args, **kwargs):
     return get_upload_image_path(*args, **kwargs, prefix="skins")
 
 def generate_random_string(size=10, chars=string.ascii_lowercase + string.digits) -> str:

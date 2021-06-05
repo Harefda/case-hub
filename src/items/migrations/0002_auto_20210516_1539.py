@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='item',
             name='image',
-            field=models.ImageField(blank=True, null=True, upload_to=items.utils.get_user_upload_image_path),
+            field=models.ImageField(blank=True, null=True, upload_to=items.utils.get_item_upload_image_path),
         ),
         migrations.AlterField(
             model_name='item',
