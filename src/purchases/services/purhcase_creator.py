@@ -12,7 +12,7 @@ class PurchaseCreator:
         self.case = case
         self.item = item
 
-    def __call__(self):
+    def __call__(self): #call class
         if self.allowed_to_create:
             return self.create()
         else:

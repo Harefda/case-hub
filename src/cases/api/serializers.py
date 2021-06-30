@@ -47,6 +47,7 @@ class CaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Case
         fields = [
+            "id",
             "name",
             "price",
             "image",
@@ -55,4 +56,5 @@ class CaseSerializer(serializers.ModelSerializer):
             "bonus",
             "items"
         ]
+
 
