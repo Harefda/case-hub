@@ -10,7 +10,7 @@ from accounts.utils import get_user_upload_image_path
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None, is_active=True, is_staff=False, is_admin=False):
+    def create_user(self, email, image=None, password=None, is_active=True, is_staff=False, is_admin=False):
         if not password:
             raise ValueError("User must have a password")
         if not email:
@@ -20,6 +20,7 @@ class UserManager(BaseUserManager):
 
         user = self.model(
             email=email,
+            image=image,
         )
         user.set_password(password)
         user.is_staff = is_staff
@@ -49,7 +50,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     email = models.EmailField(unique=True)
-    image = models.ImageField(upload_to=get_user_upload_image_path)
+    image = models.ImageField(upload_to=get_user_upload_image_path, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)

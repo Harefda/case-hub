@@ -18,8 +18,11 @@ from django.urls import path
 from django.urls.conf import include
 
 from accounts import views
+from accounts import apis
+from accounts.apis import create_user_api
 
 
 urlpatterns = [
     path('profile/', views.profile_page),
+    path('api/user/create/', apis.create_user_api),
     ]

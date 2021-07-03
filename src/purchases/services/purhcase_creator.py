@@ -13,7 +13,7 @@ class PurchaseCreator:
         self.item = item
 
     def __call__(self): #call class
-        if self.allowed_to_create:
+        if self.allowed_to_create():
             return self.create()
         else:
             return None

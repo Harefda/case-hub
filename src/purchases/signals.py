@@ -6,18 +6,12 @@ from app.errors import ValidationError
 
 from purchases.models import Purchase
 from purchases.services import PurchaseToolkit
-from accounts.services import add_item_to_inventory
 
 
 @receiver(post_save, sender=Purchase)
 def purchase_post_save_receiver(sender, instance, created, *args, **kwargs):
+    from accounts.services import UserToolkit
     if created:
         PurchaseToolkit.pay_for_purchase(instance)
         if instance.paid:
-            add_item_to_inventory(instance.user, instance.item)
-
-
-            
-    
-
-
+            UserToolkit.add_item_to_inventory(instance.user, instance.item)
