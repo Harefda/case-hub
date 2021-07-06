@@ -1,4 +1,3 @@
-from django.db.models.query_utils import select_related_descend
 from rest_framework import serializers
 
 from cases.models import Case, ItemInCase

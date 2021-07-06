@@ -24,5 +24,7 @@ from accounts.apis import create_user_api
 
 urlpatterns = [
     path('profile/', views.profile_page),
+    path('login/', views.login_page),
     path('api/user/create/', apis.create_user_api),
+    path('api/user/login/', apis.login_user_api)
     ]
