@@ -10,5 +10,4 @@ class ItemSerializer(serializers.ModelSerializer):
             "name",
             "price",
             "image",
-            "balanse"
         ]
